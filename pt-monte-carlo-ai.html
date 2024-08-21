@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale-=1.0">
+        <title>Personal Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/e19de4e09e.js" crossorigin="anonymous"></script>
+    <head>
+    <body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Derick Luke</p>
+                <h1>Tic Tac Toe Using Monte <span>Carlo</span></h1>
+            </div>
+        </div>
+    </div>
+<!-------------------------------------------------About Us Content-------------------------------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/pt-tic-tac-toe2.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">Description</h1>
+                <p><strong>Status: Finished</strong></p>
+                <br>
+                <p>
+                    In early 2024, I made a Monte Carlo Tic-Tac-Toe Player is a Python program designed to simulate and optimize 
+                    decision-making in Tic-Tac-Toe using the Monte Carlo method. The program begins by defining key constants such as 
+                    NTRIALS, MCMATCH, and MCOTHER, which control the number of simulated games (trials) and the scoring weights for the 
+                    machine player and the opponent. The core of the program revolves around several functions that work together to 
+                    determine the best move for the machine player.
+                </p>
+                <br>
+                <p>
+                    The mc_trial function is responsible for simulating a complete game of Tic-Tac-Toe from the current board state. 
+                    Starting with the current player, it randomly selects and occupies empty squares on the board until the game 
+                    concludes with either a win, loss, or draw. This function uses a loop to continually check the board's status, 
+                    alternating between players after each move using the switch_player method provided by the Tic-Tac-Toe module.
+                </p>
+                <br>
+                <p>
+                    Once a trial game is completed, the mc_update_scores function evaluates the outcome and adjusts the scores on the 
+                    board accordingly. This function iterates through each square on the board, comparing the square's occupant with 
+                    the game's winner. If the machine player wins, squares occupied by the machine player receive a positive score 
+                    increment (determined by MCMATCH), while squares occupied by the opponent receive a negative adjustment. 
+                    Conversely, if the opponent wins, the scoring is reversed, penalizing the machine player's squares while 
+                    rewarding the opponent's. In the case of a draw, no changes are made to the scores.
+                </p>
+                <br>
+                <p>
+                    The get_best_move function then takes the updated scores matrix and identifies the square with the highest score 
+                    among those still available (i.e., empty squares). The function begins by initializing max_score to negative 
+                    infinity to ensure any valid score encountered during iteration will be higher. As the function evaluates each 
+                    square, it updates max_score and records the corresponding square as the current best move. If multiple squares 
+                    have the same maximum score, the function randomly selects one, introducing an element of unpredictability into 
+                    the machine player's strategy.
+                </p>
+                <br>
+                <p>
+                    The mc_move function brings everything together by orchestrating the decision-making process for the machine 
+                    player. It initializes a scores matrix with all elements set to zero, representing the Tic-Tac-Toe board. 
+                    The function then runs a specified number of trials (NTRIALS), during each of which it clones the current board, 
+                    plays out a trial game using mc_trial, and updates the scores based on the game's outcome with mc_update_scores. 
+                    After all trials are complete, the function calls get_best_move to select the optimal move for the machine player, 
+                    which is then returned as the final decision.
+                </p>
+                <br>
+                <p>
+                    To test and observe the machine player's performance, the program provides options to run the game either through a 
+                    console-based interface or a graphical user interface (GUI). These testing methods allow users to witness how the 
+                    Monte Carlo method enables the machine player to adapt and improve its strategy through numerous simulated games, 
+                    ultimately making more informed decisions that increase its chances of winning or forcing a draw. The Monte Carlo 
+                    Tic-Tac-Toe Player exemplifies how probabilistic simulations can be leveraged to enhance decision-making in games, 
+                    creating a robust and competitive artificial intelligence that can challenge human players. More details of my project 
+                    can be seen in the blog and the code can be downloaded below.
+                </p>
+                <br>
+                <a href="https://dellboys006.wixsite.com/derkblogs-year-12-se/post/week-2" class="btn2">Blog</a>
+                <a href="downloads/pt-monte-carlo-tic-tac-toe.zip" download class="btn2">Download</a>
+            </div>
+        </div>
+    </div>
+    <h1 class="gal-title">Project Gallery</h1>
+    <div class="row-gal">
+        <div class="column-gal">
+            <img src="images/pt-tic-tac-toe.png">
+        </div>
+        <div class="column-gal">
+            <img src="images/pt-tic-tac-toe2.png">
+
+          </div>
+          <div class="column-gal">
+            <img src="images/pt-tic-tac-toe3.png">
+          </div>
+          <div class="column-gal">
+            <img src="images/pt-tic-tac-toe4.png">
+
+          </div>
+      </div>
+</div>
+<!--------------------------------------------------Footer----------------------------------------------->
+<div class="copyright">
+    <p>Copyright © Derick Luke. Made with HardWork and Dedication <i class="fa-solid fa-heart"></i></p>
+</div>
+
+<!---------------------------------------Javascript for Phone menu-------------------------------------->
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+<!-------------------------Open and Close Sidemenu on mobile----------------------->
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+</script>
+</body>
+</html>

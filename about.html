@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale-=1.0">
+        <title>Personal Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/e19de4e09e.js" crossorigin="anonymous"></script>
+    <head>
+    <body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Derick Luke</p>
+                <h1>About <span>Me</span></h1>
+            </div>
+        </div>
+    </div>
+<!-------------------------------------------------About Us Content-------------------------------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/about-me_img.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>
+                    Hello again! As you know I'm Derick Luke and on this page I will talk a bit more about me, my passion and life story.
+                </p>
+                <br>
+                <p>
+                    My passion ever since I was a kid was engineering, specifically making robots. I soon became intrested in the field of
+                     Mechatronics which incorporates, mechanical, electrical and robotical engineering which sounded perfect for what I wanted to become.
+                </p>
+                <br>
+                <p>
+                    Around 8th grade, I was introduced to python, before the only programming language I learnt was scratch. I learnt the basics
+                    of python on youtube from a 4 hour course from free code camp. With that knowledge I set up a tutoring service to teach the kids 
+                    in my neighbourhood python. After about a year of tutoring and honing my python skills, I became working on various projects like a 
+                    motion tracking system where it uses a body detection system and tracks your motion. I then began working on my own cryptocurrency
+                    with a friend as we were both intrested in cryptocurrencies.
+                </p>
+                <br>
+                <p>
+                    Then in year 9, I was introduced to grok learning by my I.T teacher. Grok learning taught me a lot about programming since it was
+                    a site that gave you questions and you had to coded out yourself using basic logic, a lot like leet coding, this gave me an insight
+                    on how code runs and works and gave me a lot better visualization when I write code. 
+                </p>
+                <br>
+                <p>
+                    For the rest of the year, I just practiced my python programming on Grok and I ventured into a new field which was
+                    game development. I was slightly intrested in doing game development, so I chose game development as one of my subjects 
+                    for school and started working on a game. It was just a simple 3D fps shooter game but it taught me a lot about game 
+                    development and unity, this skill came in handy later on in the years when I wanted to make simulations for robots.
+                </p>
+                <br>
+                <p>
+                    Then in year 10, I ventured into the field of computer science and data analytics, I practiced useful skills like how 
+                    to use the pandas library, seaborn and matplotlib. This lead me onto cone of my first data analytics task set by my I.T teacher, 
+                    the task was to get any datatset from ACT Open Data Portal and use the data and visualise it however you want. I decide to use a 
+                    dataset where it records all bicycle crashes from all over canberra and then sort them into 4 electoral districts or political districts
+                    to see which electoral district had the most bicycle crashes. This task took awhile as all the locations of the bicycle crashes were
+                    recorded by what street the crash happened in. Meaning I had to find every single street in canberra and then sort each street by what
+                    electoral district they are situated in and then sort all the bicycle crashes into their respected electoral district. This year also 
+                    was the start of my development in electronics, since I knew I needed electronics if I wanted to do engineering. However, my school wasn't
+                    teaching electronics at the time, so I took it into my own hands by buying and electronics course on udmey and learning electronics.
+                    I also bought another udmey course which was a tensorflow & machine learning course and got through a good 30 hours of content while also doing
+                    school work.
+                </p>
+                <br>
+                <p>
+                    Then in year 11, I spent a lot of time learning various new skills in computer science like logic gates and created my
+                    own JK-FLip-Flop in python, and multiple different questions and challenges on logic gates. I also learned about Big O and data structures and also
+                    various different searching algorithism as well. I also learned how to use various components for Arduino like the temperature sensors, relays 
+                    and IR sensors. I was then given a task to make a RPG game using OOP python for computer science and for robotics I tried to make a food delivery drone but wasn't able to complete 
+                    it due to an injury. During year 11 I also ventured into a new field called reinforcement learning and started researching it for my computer science
+                    projects, specifically Q-Learning and was able to recreate the algorithim from scratch. For Robotics, I decided I would try making a lane detection 
+                    robot, where I use python to detect where the lane is turning using a raspberry pi and then send some instructions to the motors to turn in the direction
+                    of the lane. At the end of the year I decided to learn CAD modelling on youtube, as I realised that next year we will have the oppertunity to make 1 year projects where we 
+                    can work on one robot for the entire year, to prepare for this, I realised I would need to make specialized designs for my robot so I self-taught my self CAD modelling on
+                    FreeCAD over the holidays.
+                </p>
+                <br>
+                <p>
+                    In year 12, I fully put my focus on developing reinforcement learning systems. This year I had the ability to do 1 year project, where I can spend the whole
+                    year developing one robot. I decided I would try and make a robot that can learn to walk by itself using reinforcement learning. This was difficult as the 
+                    field of reinforcement learning was no walk in the park. I had to understand complex math that I haven't even learned in school and there wasn't much resources
+                    on the subject either, only really simple implementation on basic algorithims. My robot had to use a specific algorithim called DDPG or Deep Deterministic Policy 
+                    Gradient, so I had to find other resources. Thankfully I was able to get my hand on a reinforcement learning book that not only talks about the math behind the algorithims 
+                    but also how to implement them in python as well. Since I had very little knowledge on reinforcement learning, I had to read through all 500 pages of the book and 
+                    then figure out how I would implement my chosen algorithim into my robot. As of know I am currently building my self-learning robot.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------------------------------Footer----------------------------------------------->
+<div class="copyright">
+    <p>Copyright © Derick Luke. Made with HardWork and Dedication <i class="fa-solid fa-heart"></i></p>
+</div>
+
+<!---------------------------------------Javascript for Phone menu-------------------------------------->
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+<!-------------------------Open and Close Sidemenu on mobile----------------------->
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale-=1.0">
+        <title>Personal Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/e19de4e09e.js" crossorigin="anonymous"></script>
+    <head>
+    <body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Derick Luke</p>
+                <h1>Bicycle Crashes in <span>Electorates</span></h1>
+            </div>
+        </div>
+    </div>
+<!-------------------------------------------------About Us Content-------------------------------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/pt-electorate-bicycle-crashes.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">Description</h1>
+                <p><strong>Status: Finished</strong></p>
+                <br>
+                <p>
+                    In year 10, I was tasked by my I.T teacher to take a random dataset from ACT Open Data Portal and analyse and manipulate 
+                    the data how I see fit. So I decided to take a bicycle crash dataset from the portal where it shows all the bicycle 
+                    crashes that have happened in canberra over the past 10 years. I decided that I would try and find which 
+                    political / electorate district had the most bicycle crashes. This seemed like an easy task until I realised that 
+                    the location of the bicycle crashes only shows what street it happened on. Meaning I had to make a dataset where 
+                    I take every single street in Canberra, and organize them into their respective suburbs, on top of that the 
+                    location of where the crash happened not only showed the street but also the intersection like this 
+                    (street/intersection).
+                </p>
+                <br>
+                <p> Since I only needed the street I had to do a lot of data cleaning, this was 
+                    very tough as I couldn't just take values before the "/" because sometimes the street and intersection would be
+                    reversed like this (intersection/street), so I had to figure which was the actual street between the two. After I did that I 
+                    had to label each suburb into their respective political / electorate district. After 2 weeks of making and 
+                    cleaning the dataset I was finally able to sort each bicycle crash into their respective political / electorate 
+                    district. I then graphed the data to figure out which electorate / political district had the most bicycle crashes which 
+                    came out to be kurrajong. I then was tasked to put the values I gathered into a map. I first got the longitiude and latitude of 
+                    where each crash happend and then plotted them onto a 2D map of Canberra. More details of my work can be downloaded below.</p>
+                <br>
+
+                <a href="downloads/pt-electorate-bicycle-crashes.pdf" download class="btn2">Download</a>
+            </div>
+        </div>
+    </div>
+    <h1 class="gal-title">Project Gallery</h1>
+    <div class="row-gal">
+        <div class="column-gal">
+            <img src="images/pt-electorate-bicycle-crashes.png">
+        </div>
+        <div class="column-gal">
+            <img src="images/pt-electorate1.png">
+
+          </div>
+          <div class="column-gal">
+            <img src="images/pt-electorate2.png">
+
+            
+          </div>
+          <div class="column-gal">
+            <img src="images/pt-electorate3.png">
+
+          </div>
+      </div>
+</div>
+<!--------------------------------------------------Footer----------------------------------------------->
+<div class="copyright">
+    <p>Copyright © Derick Luke. Made with HardWork and Dedication <i class="fa-solid fa-heart"></i></p>
+</div>
+
+<!---------------------------------------Javascript for Phone menu-------------------------------------->
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+<!-------------------------Open and Close Sidemenu on mobile----------------------->
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+</script>
+</body>
+</html>

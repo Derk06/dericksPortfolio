@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale-=1.0">
+        <title>Personal Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/e19de4e09e.js" crossorigin="anonymous"></script>
+    <head>
+    <body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Derick Luke</p>
+                <h1>JK-Flip-Flop In <span>Python</span></h1>
+            </div>
+        </div>
+    </div>
+<!-------------------------------------------------About Us Content-------------------------------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/pt-jk-flip-flop.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">Description</h1>
+                <p><strong>Status: Finished</strong></p>
+                <br>
+                <p>
+                    In early 2023, I took on an intricate project focused on enhancing my Python programming skills, particularly 
+                    in the areas of object-oriented design, logic gates, and finite state machines. This project involved developing a 
+                    detailed simulation of digital logic circuits, which required creating and integrating various classes to model 
+                    different types of logic gates and their interactions. A challenge I faced was with the JK-Flip Flop 
+                    function, a crucial component in digital logic circuits.
+                </p>
+                <br>
+                <p>
+                    Initially, I struggled due to a misinterpretation of the 
+                    excitation and output behavior, leading to incorrect simulation results. After a thorough review and debugging 
+                    process, I identified and corrected the issue by revising the JK-Flip Flop class and drawing a circuit diagram to ensure it accurately managed 
+                    state transitions and output values. The project took designing several key components, including the 
+                    LogicGate class, which provided common attributes and methods for all gates, and the BinaryGate and UnaryGate 
+                    classes, which handled gates with two inputs and one input. Specific gate implementations, such as 
+                    AND, OR, NOT, NAND, and NOR gates, were detailed, each using its unique logic. The JKFlipFlop class was 
+                    adjusted to correctly output the current state while managing the next state for future cycles, and the Connector 
+                    class was implemented to facilitate connections between gates, ensuring proper signal flow within the circuit.
+                </p>
+                <br>
+                <p>
+                    The final simulation allowed for interactive user inputs and dynamic testing of gate functionalities, demonstrating 
+                    effective integration of various gate types. This project not only advanced my technical skills in Python and 
+                    digital logic design but also taught me the importance of documentation and precise implementation. 
+                    It provided valuable hands-on experience in debugging complex systems and reinforced how detailed attention to 
+                    technical specifications can significantly impact project success, showcasing a successful application of 
+                    object-oriented principles in digital circuit simulation. My code can be downloaded below.
+                </p>
+                <br>
+
+                <a href="downloads/JK-Flip-Flop.zip" download class="btn2">Download</a>
+            </div>
+        </div>
+    </div>
+    <h1 class="gal-title">Project Gallery</h1>
+    <div class="row-gal">
+        <div class="column-gal">
+            <img src="images/pt-jk-flip-flop.png">
+        </div>
+        <div class="column-gal">
+            <img src="images/pt-jk-flip-flop1.png">
+
+          </div>
+          <div class="column-gal">
+            <img src="images/pt-jk-flip-flop2.png">
+
+            
+          </div>
+          <div class="column-gal">
+            <img src="images/pt-jk-flip-flop3.png">
+
+          </div>
+      </div>
+</div>
+<!--------------------------------------------------Footer----------------------------------------------->
+<div class="copyright">
+    <p>Copyright © Derick Luke. Made with HardWork and Dedication <i class="fa-solid fa-heart"></i></p>
+</div>
+
+<!---------------------------------------Javascript for Phone menu-------------------------------------->
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+<!-------------------------Open and Close Sidemenu on mobile----------------------->
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+</script>
+</body>
+</html>

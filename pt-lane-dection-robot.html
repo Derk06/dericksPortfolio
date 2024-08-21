@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale-=1.0">
+        <title>Personal Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/e19de4e09e.js" crossorigin="anonymous"></script>
+    <head>
+    <body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Derick Luke</p>
+                <h1>Lane Detection <span>Car</span></h1>
+            </div>
+        </div>
+    </div>
+<!-------------------------------------------------About Us Content-------------------------------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/pt-lane-detection.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">Description</h1>
+                <p><strong>Status: Finished</strong></p>
+                <br>
+                <p>
+                    In late 2023, I began working on a lane detection car project that uses computer vision and a technique called 
+                    pixel summation to determine the curvature of the road or path. The system works by drawing a line in the middle 
+                    of the video feed and analyzing which side has more pixels. If the left side has more pixels, the curve is to the 
+                    left. If the right side has more pixels, the curve is to the right. If both sides have an equal number of pixels, 
+                    the path is straight. However, this approach has a drawback, if the car is not perfectly centered on the road, it 
+                    might incorrectly detect a curve due to an uneven pixel distribution. To address this, I implemented a histogram to 
+                    find the midpoint of the road or path. 
+                </p>
+                <br>
+                <p>
+                    After completing the computer vision system, I moved on to the physical build of the car. The car is built on a basic a
+                    crylic base and uses a single H-bridge to control the motors for movement and direction changes. It is controlled by a 
+                    Raspberry Pi, when the Raspberry Pi signals the car to move forward, it sends a signal to the H-bridge to turn all the 
+                    motors clockwise. For backward movement, the H-bridge turns the motors counterclockwise. To turn, the car deactivates one 
+                    side's motors while the other side remains active.
+                </p>
+                <br>
+                <p>
+                    Unfortunately, I was unable to make the car fully reliant on the lane detection software because the Raspberry Pi 
+                    camera malfunctioned due to compatibility issues with the newly released Debian software. Since my project 
+                    depended on the camera for image analysis, I couldn’t fully integrate the physical system with the computer 
+                    vision system. If the camera had worked, the project would likely have succeeded, as the computer vision system 
+                    accurately detected curves, and all that was needed was to relay the curve location to the physical system to 
+                    adjust the H-bridge accordingly.
+                </p>
+                <br>
+                <p>
+                    Full details of the project can be viewed on my robotics blog, link is below.
+                </p>
+                <a href="https://dellboys006.wixsite.com/derkblog---semester/post/week-14" class="btn2">Blog</a>
+            </div>
+        </div>
+    </div>
+    <h1 class="gal-title">Project Gallery</h1>
+    <div class="row-gal">
+        <div class="column-gal">
+            <iframe src="images/pt-lane-detection-car.mp4" frameborder="0" allowfullscreen></iframe>
+            <img src="images/pt-lane-detection-car-6.jpg">
+        </div>
+        <div class="column-gal">
+            <iframe src="images/pt-lane-detection-car-2.mp4" frameborder="0" allowfullscreen></iframe>
+            <img src="images/pt-lane-detection-car-7.jpg">
+          </div>
+          <div class="column-gal">
+            <img src="images/pt-lane-detection-car-1.png">
+            <img src="images/pt-lane-detection-car-5.png">
+          </div>
+          <div class="column-gal">
+            <iframe src="images/pt-lane-detection-car-4.mp4" frameborder="0" allowfullscreen></iframe>
+            <img src="images/pt-lane-detection-car-8.png">
+          </div>
+      </div>
+</div>
+<!--------------------------------------------------Footer----------------------------------------------->
+<div class="copyright">
+    <p>Copyright © Derick Luke. Made with HardWork and Dedication <i class="fa-solid fa-heart"></i></p>
+</div>
+
+<!---------------------------------------Javascript for Phone menu-------------------------------------->
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+<!-------------------------Open and Close Sidemenu on mobile----------------------->
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+</script>
+</body>
+</html>

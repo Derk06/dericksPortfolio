@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale-=1.0">
+        <title>Personal Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/e19de4e09e.js" crossorigin="anonymous"></script>
+    <head>
+    <body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Derick Luke</p>
+                <h1>ANN from <span>Scratch</span></h1>
+            </div>
+        </div>
+    </div>
+<!-------------------------------------------------About Us Content-------------------------------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/pt-ANN-XOR.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">Description</h1>
+                <p><strong>Status: Finished</strong></p>
+                <br>
+                <p>
+                    In early 2024, when I was learning reinforcement learning, I started learning the in's and out's of 
+                    neural networks and decided I would try make an ANN from scratch. I built it to learn how perform the XOR 
+                    gate operation, a classic problem in machine learning. The XOR gate is known for requiring a non-linear decision boundary, 
+                    which makes it an ideal candidate for demonstrating the capabilities of a neural network with a hidden layer. 
+                    I began by defining the structure of the network, which includes an input layer, a hidden layer, and an output layer. The hidden layer uses the sigmoid 
+                    activation function, a smooth, non-linear function that squashes inputs to values between 0 and 1, enabling the 
+                    network to learn complex patterns that would be impossible with a linear model.
+                </p>
+                <br>
+                <p>
+                    I initialized the weights and biases of the network randomly to give the network a starting point for learning. 
+                    Forward propagation was implemented to calculate the network’s output by processing the inputs through the layers, 
+                    applying the weights, biases, and activation functions. The real challenge came in the backpropagation process, 
+                    where I used the error between the predicted output and the actual XOR output to update the weights. This update 
+                    was done by calculating gradients using the chain rule and adjusting the weights with gradient descent. 
+                    The network’s learning process was guided by a cost function, specifically the Mean Squared Error (MSE), which I 
+                    minimized during training to improve the network’s accuracy. 
+                </p>
+                <br>
+                <p>
+                    The learning rate controlled the size of the updates to the weights, balancing the speed and stability of the 
+                    training process. Over 5000 iterations, the network repeatedly adjusted its weights, gradually improving its 
+                    ability to correctly perform the XOR operation. The project culminated in a fully trained neural network capable 
+                    of correctly identifying the XOR output for any given pair of inputs, demonstrating the power and flexibility of 
+                    neural networks in solving non-linear problems. My code can be downloaded below and documented it well with code comments.
+                </p>
+                <br>
+                <a href="downloads/pt-ANN-XOR.zip" download class="btn2">Download</a>
+            </div>
+        </div>
+    </div>
+    <h1 class="gal-title">Project Gallery</h1>
+    <div class="row-gal">
+        <div class="column-gal">
+            <img src="images/pt-ANN-XOR.png">
+        </div>
+        <div class="column-gal">
+            <img src="images/pt-ANN-XOR1.png">
+
+          </div>
+          <div class="column-gal">
+            <img src="images/pt-ANN-XOR2.png">
+          </div>
+          <div class="column-gal">
+            <img src="images/pt-ANN-XOR3.png">
+
+          </div>
+      </div>
+</div>
+<!--------------------------------------------------Footer----------------------------------------------->
+<div class="copyright">
+    <p>Copyright © Derick Luke. Made with HardWork and Dedication <i class="fa-solid fa-heart"></i></p>
+</div>
+
+<!---------------------------------------Javascript for Phone menu-------------------------------------->
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+<!-------------------------Open and Close Sidemenu on mobile----------------------->
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+</script>
+</body>
+</html>

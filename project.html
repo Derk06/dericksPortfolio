@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale-=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e19de4e09e.js" crossorigin="anonymous"></script>
+<head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Derick Luke</p>
+            <h1>My <span>Projects</span></h1>
+        </div>
+    </div>
+</div>
+<!-------------------------------------------------About Us Content-------------------------------------->
+<section class="mh-portfolio" id="mh-portfolio">
+    <div class="port-container">
+        <div class="port-row">
+            <div class="part col-sm-12">
+                <div class="portfolio-nav col-sm-12" id="filter-button">
+                    <ul>
+                        <li data-filter="*" class="current">
+                            <span>All Categories</span>
+                        </li>
+
+                        <li data-filter=".wd">
+                            <span>Web Design</span>
+                        </li>
+
+                        <li data-filter=".mechatronics">
+                            <span>Mechatronics</span>
+                        </li>
+
+                        <li data-filter=".ml">
+                            <span>Machine Learning</span>
+                        </li>
+                        <li data-filter=".3D">
+                            <span>3D Modelling</span>
+                        </li>
+                        <li data-filter=".gamedev">
+                            <span>Game Development</span>
+                        </li>
+                        <li data-filter=".crypto">
+                            <span>Cryptocurrency</span>
+                        </li>
+                        <li data-filter=".da">
+                            <span>Data Analysis</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mh-project-gallery col-sm-12" id="project-gallery">
+                    <div class="portfolioContainer row">
+                        <div class="grid-item col-md-4 mechatronics ml 3D">
+                            <a href="pt-self-walking-robot.html">
+                                <figure>
+                                    <img src="images/3D_Robot_FUll.png">
+                                    <figcaption class="fig-caption">
+                                        <i class="fa fa-search"></i>
+                                        <h5 class="title">Self-learning Walking Robot</h5>
+                                        <span class="sub-title-port">Mechatronics / Machine Learning / 3D Modelling</span>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+
+                        <div class="grid-item col-md-4 mechatronics da">
+                            <a href="pt-lane-dection-robot.html">
+                                <figure>
+                                    <img src="images/pt-lane-detection.png">
+                                    <figcaption class="fig-caption">
+                                        <i class="fa fa-search"></i>
+                                        <h5 class="title">Lane Detection Robot</h5>
+                                        <span class="sub-title-port">Mechatronics / Data Analysis</span>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+
+                        <div class="grid-item col-md-4 gamedev 3D">
+                            <a href="pt-fps-shooter.html">
+                                <figure>
+                                    <img src="images/GameDev2.jpg">
+                                    <figcaption class="fig-caption">
+                                        <i class="fa fa-search"></i>
+                                        <h5 class="title">FPS Game</h5>
+                                        <span class="sub-title-port">Game Development / 3D Modelling</span>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+
+                        <div class="grid-item col-md-4 wd">
+                            <a href="pt-church-website.html">
+                                <figure>
+                                    <img src="images/church-site.png">
+                                    <figcaption class="fig-caption">
+                                        <i class="fa fa-search"></i>
+                                        <h5 class="title">Church Website</h5>
+                                        <span class="sub-title-port">Web Development</span>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+
+                        <div class="grid-item col-md-4 da">
+                            <a href="pt-electorate-bicycle-crashes.html">
+                                <figure>
+                                    <img src="images/pt-electorate-bicycle-crashes.png">
+                                    <figcaption class="fig-caption">
+                                        <i class="fa fa-search"></i>
+                                        <h5 class="title">Electorate Bicycle Crashes</h5>
+                                        <span class="sub-title-port">Data Analysis</span>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+
+                        <div class="grid-item col-md-4 da mechatronics">
+                            <a href="pt-jk-flip-flop.html">
+                                <figure>
+                                    <img src="images/pt-jk-flip-flop.png">
+                                    <figcaption class="fig-caption">
+                                        <i class="fa fa-search"></i>
+                                        <h5 class="title">JK-Flip-Flop in Python</h5>
+                                        <span class="sub-title-port">Data Analysis / Mechatronics</span>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+
+                        <div class="grid-item col-md-4 da">
+                            <a href="pt-tree-diagram-merge-sort.html">
+                                <figure>
+                                    <img src="images/pt-tree-diagram.png">
+                                    <figcaption class="fig-caption">
+                                        <i class="fa fa-search"></i>
+                                        <h5 class="title">Tree Diagram of Merge Sort</h5>
+                                        <span class="sub-title-port">Data Analysis</span>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+
+                        <div class="grid-item col-md-4 da ml">
+                            <a href="pt-monte-carlo-ai.html">
+                                <figure>
+                                    <img src="images/pt-tic-tac-toe2.png">
+                                    <figcaption class="fig-caption">
+                                        <i class="fa fa-search"></i>
+                                        <h5 class="title">AI Tic Tac Toe Monte Carlo</h5>
+                                        <span class="sub-title-port">Data Analysis / Machine Learning</span>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+
+                        <div class="grid-item col-md-4 crypto da">
+                            <a href="pt-self-made-cryptocurrency.html">
+                                <figure>
+                                    <img src="images/crypto1.png">
+                                    <figcaption class="fig-caption">
+                                        <i class="fa fa-search"></i>
+                                        <h5 class="title">Self-Made Cryptocurrency</h5>
+                                        <span class="sub-title-port">Cryptocurrency / Data Analysis</span>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+
+                        <div class="grid-item col-md-4 ml mechatronics da">
+                            <a href="pt-ANN-XOR-Gate.html">
+                                <figure>
+                                    <img src="images/pt-ANN-XOR.png">
+                                    <figcaption class="fig-caption">
+                                        <i class="fa fa-search"></i>
+                                        <h5 class="title">ANN From Scratch XOR gate</h5>
+                                        <span class="sub-title-port">Machine Learning / Mechatronics / Data Analysis</span>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--------------------------------------------------Footer----------------------------------------------->
+<div class="copyright">
+        <p>Copyright © Derick Luke. Made with HardWork and Dedication <i class="fa-solid fa-heart"></i></p>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var filterButtons = document.querySelectorAll('.portfolio-nav ul li');
+    var gridItems = document.querySelectorAll('.grid-item');
+
+    filterButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var filter = this.getAttribute('data-filter');
+
+            filterButtons.forEach(function(btn) {
+                btn.classList.remove('current');
+            });
+            this.classList.add('current');
+
+            gridItems.forEach(function(item) {
+                if (filter === "*" || item.classList.contains(filter.slice(1))) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        });
+    });
+});
+</script>
+<!---------------------------------------Javascript for Phone menu--------------------->
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+<!-------------------------Open and Close Sidemenu on mobile----------------------->
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+</script>
+</body>
+</html>

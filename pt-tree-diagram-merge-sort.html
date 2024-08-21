@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale-=1.0">
+        <title>Personal Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/e19de4e09e.js" crossorigin="anonymous"></script>
+    <head>
+    <body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Derick Luke</p>
+                <h1>Merge Sort Tree <span>Diagram</span></h1>
+            </div>
+        </div>
+    </div>
+<!-------------------------------------------------About Us Content-------------------------------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/pt-tree-diagram.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">Description</h1>
+                <p><strong>Status: Finished</strong></p>
+                <br>
+                <p>
+                    In early 2024, I was given a task where I had to represent the spliting process of a merge sort algorithim in a tree 
+                    diagram. It seemed fairly easy but this task too one week to complete. The input data for this project was 
+                    [12, 8, 2, 17, 5, 10, 96, 4, 1, 100, 14]. Initially, the task presented several challenges. The main challenge 
+                    was to accurately capture and display the process of dividing the list into sublists at each iteration. My approach 
+                    involved implementing the merge sort algorithm with a specific focus on tracking how the list was divided into left 
+                    and right sublists. To achieve this, I used two lists, tree_listleft and tree_listright, to record the elements 
+                    that were split into left and right branches.
+                </p>
+                <br>
+                <p>
+                    The mergeSort function played a central role in this project. It recursively divides the array into halves, and 
+                    during each recursive call, I recorded which elements were allocated to the left and right sublists. This tracking 
+                    allowed me to understand and document the flow of data as it moved through the algorithm. For instance, in the 
+                    first split, the input list [12, 8, 2, 17, 5, 10, 96, 4, 1, 100, 14] was divided into [12, 8, 2, 17, 5] which 
+                    was recorded in tree_listleft as it was split into the left branch and [10, 96, 4, 1, 100, 14] which was recorded 
+                    in tree_listright as it was split into the right branch.
+                </p>
+                <br>
+                <p>
+                    The challenge was to figure out which elements from tree_listleft and tree list right fit together as both lists 
+                    only showed the number that was split into either right or left branches. So putting them back together to the original list 
+                    was a challenge.
+                </p>
+                <br>
+                <p>
+                    The visualization was created using the ArithmeticExpression class and the draw_tree module. These tools allowed 
+                    me to render the binary tree diagram that displayed how the original list was split at each stage of the merge 
+                    sort algorithm. The tree started with the full list at the root and branched out to show the progressively smaller 
+                    sublists down to individual elements. This visual approach made it easier to grasp how merge sort systematically 
+                    breaks down the problem into manageable pieces before tackling the more straightforward task of merging the sorted 
+                    sublists.
+                </p>
+                <br>
+                <p>
+                    In the end, the project was a success. The final tree diagram effectively demonstrated how merge sort divides a 
+                    list into smaller and smaller parts. More details of the project can be viewed in my blog and my code can be downloaded 
+                    below.
+                </p>
+                <br>
+                <a href="https://dellboys006.wixsite.com/derkblogs-year-12-se/post/week-8" class="btn2">Blog</a>
+                <a href="downloads/pt-merge-sort_tree.zip" download class="btn2">Download</a>
+            </div>
+        </div>
+    </div>
+    <h1 class="gal-title">Project Gallery</h1>
+    <div class="row-gal">
+        <div class="column-gal">
+            <img src="images/pt-tree-diagram.png">
+        </div>
+        <div class="column-gal">
+            <img src="images/pt-merge-sort-tree.png">
+
+          </div>
+          <div class="column-gal">
+            <img src="images/pt-merge-sort-tree1.png">
+          </div>
+          <div class="column-gal">
+            <img src="images/pt-merge-sort-tree2.png">
+
+          </div>
+      </div>
+</div>
+<!--------------------------------------------------Footer----------------------------------------------->
+<div class="copyright">
+    <p>Copyright © Derick Luke. Made with HardWork and Dedication <i class="fa-solid fa-heart"></i></p>
+</div>
+
+<!---------------------------------------Javascript for Phone menu-------------------------------------->
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+<!-------------------------Open and Close Sidemenu on mobile----------------------->
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+</script>
+</body>
+</html>

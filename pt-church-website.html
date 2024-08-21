@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale-=1.0">
+        <title>Personal Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/e19de4e09e.js" crossorigin="anonymous"></script>
+    <head>
+    <body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Derick Luke</p>
+                <h1>Church <span>Website</span></h1>
+            </div>
+        </div>
+    </div>
+<!-------------------------------------------------About Us Content-------------------------------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/church-site.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">Description</h1>
+                <p><strong>Status: Finished</strong></p>
+                <br>
+                <p>
+                    In July, a church committee meeting was held where they were discussing on how they needed a church website 
+                    and need it quickly so they can inugurate it by the head bishop that would be coming in a few weeks. However, 
+                    they didn't have the funds to hire a web developer. I overheard this and volunteered to create them a website for 
+                    free. In the first week I made a skeleton of the website and showed it to the committee members. After the first week 
+                    I adjusted the website so that it fit the needs of the church members by adding a subscription box a timeline and a events 
+                    page that had a countdown. This were some of the modifications I made at the request of the church members. When I 
+                    finished I gave a quick talk on what the website was about to the whole church. The code for the website can be downloaded 
+                    below.
+                </p>
+                <br>
+
+                <a href="https://sgioccanberra.org/" class="btn2">Church Website</a>
+                <a href="downloads/pt-church-website.zip" download class="btn2">Download</a>
+            </div>
+        </div>
+    </div>
+    <h1 class="gal-title">Project Gallery</h1>
+    <div class="row-gal">
+        <div class="column-gal">
+            <img src="images/pt-church-site.png">
+            <img src="images/pt-church-site-4.png">
+            <iframe src="images/WebVid1.mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="column-gal">
+            <img src="images/pt-church-site1.png">
+            <img src="images/pt-church-site-5.png">
+          </div>
+          <div class="column-gal">
+            <img src="images/pt-church-site-2.png">
+            <img src="images/pt-church-site-6.png">
+            
+          </div>
+          <div class="column-gal">
+            <img src="images/pt-church-site-3.png">
+            <img src="images/pt-church-site-7.png">
+            <iframe src="images/pt-church-web-talk.mp4" frameborder="0" allowfullscreen></iframe>
+          </div>
+      </div>
+</div>
+<!--------------------------------------------------Footer----------------------------------------------->
+<div class="copyright">
+    <p>Copyright © Derick Luke. Made with HardWork and Dedication <i class="fa-solid fa-heart"></i></p>
+</div>
+
+<!---------------------------------------Javascript for Phone menu-------------------------------------->
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+<!-------------------------Open and Close Sidemenu on mobile----------------------->
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+</script>
+</body>
+</html>

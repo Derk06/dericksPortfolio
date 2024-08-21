@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale-=1.0">
+        <title>Personal Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/e19de4e09e.js" crossorigin="anonymous"></script>
+    <head>
+    <body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Derick Luke</p>
+                <h1>Self-Made <span>Cryptocurrency</span></h1>
+            </div>
+        </div>
+    </div>
+<!-------------------------------------------------About Us Content-------------------------------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/crypto1.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">Description</h1>
+                <p><strong>Status: Finished</strong></p>
+                <br>
+                <p>
+                    In early 2021, me and my friend wanted to build a cryptocurrency as a fun summer project, my part of the project 
+                    was the creation of the Genesis Block, the foundational block of the blockchain. I then implemented the mining 
+                    process, utilizing the SHA256 hash function to ensure the security and integrity of the blocks. Each block was 
+                    rigorously tested to confirm the correct implementation of the cryptographic functions.
+                </p>
+                <br>
+                <p>
+                    Building on this foundation, I developed the Blockchain class, which allowed for the creation, validation, and 
+                    management of a chain of blocks. I focused on multiple chain validation techniques to ensure that the blockchain 
+                    could be correctly validated and updated across different nodes. This included implementing and testing mechanisms 
+                    to replace a blockchain with a longer, valid chain, ensuring the integrity and continuity of the blockchain.
+                </p>
+                <br>
+                <p>
+                    I organized the project into modular components, including the creation of an API that could handle requests to 
+                    get blocks and mine new blocks. To enable peer-to-peer communication, I developed a WebSocket server, allowing 
+                    different blockchain peers to connect, exchange messages, and synchronize their blockchains. This synchronization 
+                    was essential for maintaining a consistent and accurate blockchain across all participating nodes, especially when 
+                    handling challenges like the 51% attack.
+                </p>
+                <br>
+                <p>
+                    To add the cryptocurrency functionality, I integrated the Proof of Work system, including dynamic block difficulty 
+                    adjustment and nonce calculation to secure the network against malicious attacks. I implemented a wallet system 
+                    where users could generate cryptographic keys, create transactions, and sign them securely. The transaction 
+                    handling extended to a transaction pool, which was integrated into the peer-to-peer server to manage transactions 
+                    across the network. I also included a miner class responsible for validating transactions and issuing rewards, 
+                    ensuring that miners were incentivized to maintain the blockchain.
+                </p>
+                <br>
+                <p>
+                    The project became a fully functional cryptocurrency system, where I implemented features like wallet balance 
+                    calculation during transactions, transaction validation, and broadcasting cleared transactions across the network. 
+                    Finally, I tested the entire system to ensure that all components worked together seamlessly, resulting in a robust 
+                    and secure blockchain with a functioning cryptocurrency. Unfortunately, most of the code has been long lost as my laptop 
+                    hardrive broke and could never retrieve the project but was able to salvage a few snippits of code.
+                </p>
+                <br>
+                <a href="downloads/salvaged-crypto-code.zip" download class="btn2">Download</a>
+            </div>
+        </div>
+    </div>
+    <h1 class="gal-title">Project Gallery</h1>
+    <div class="row-gal">
+        <div class="column-gal">
+            <img src="images/crypto1.png">
+        </div>
+        <div class="column-gal">
+            <img src="images/crypto2.GIF">
+
+          </div>
+          <div class="column-gal">
+            <img src="images/crypto3.GIF">
+          </div>
+          <div class="column-gal">
+            <img src="images/crypto4.png">
+
+          </div>
+      </div>
+</div>
+<!--------------------------------------------------Footer----------------------------------------------->
+<div class="copyright">
+    <p>Copyright © Derick Luke. Made with HardWork and Dedication <i class="fa-solid fa-heart"></i></p>
+</div>
+
+<!---------------------------------------Javascript for Phone menu-------------------------------------->
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+<!-------------------------Open and Close Sidemenu on mobile----------------------->
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+</script>
+</body>
+</html>

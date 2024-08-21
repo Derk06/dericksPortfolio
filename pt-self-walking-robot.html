@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale-=1.0">
+        <title>Personal Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/e19de4e09e.js" crossorigin="anonymous"></script>
+    <head>
+    <body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Derick Luke</p>
+                <h1>Self Learning Walking <span>Robot</span></h1>
+            </div>
+        </div>
+    </div>
+<!-------------------------------------------------About Us Content-------------------------------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/3D_Robot_FUll.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">Description</h1>
+                <p><strong>Status: In Development</strong></p>
+                <br>
+                <p>
+                    I began my project at the start of 2024, where I decided I wanted to make a reinforcement learning system. I decided 
+                    I wanted to make a robot that can walk by itself using reinforcement learning. However, I first needed to learn how 
+                    reinforcement learning works so for the next 4 months, I began researching on reinforcement learning. In the first month 
+                    I began looking for learning resources but most of the sources I couldn't understand because it required university level maths 
+                    which I didn't understand because I haven't learnt it yet in school. However I was able to find a book on reinforcement learning 
+                    where it explains RL concepts in detail and shows how to implement them in python. I spent another 3 months going through all 500 pages 
+                    of the book. Once I learned the RL concepts in the book I began my search for which algorithim I should use for my robot. I came to 
+                    the conclusion that I should use the Twin Delayed Deep Deterministic Policy Gradient (TD3) algorithim for my robot as one the algorithim 
+                    excels at using continuous actions where the actions you can take in an environment can go up to infinity. I then began experimenting with 
+                    the algorithim getting comfortable with it and understanding it on a deep level, like using the algorithim to beat the OpenAI Bipedal-Walker-V3 
+                    environment and it was successful. In under 800 episodes, the agent was able to learn how to run. My experiments can be seen on my Colab Notebook below.
+
+                </p>
+                <br>
+                <p>
+                    After learning how to use the TD3 algorithim, I began creating a 3D model for my robot. My first design had a few flaws to it, so 
+                    I made a completely new design and printed it out. I then began working on the electrical side of the project, where I 
+                    had two lipo batteries and I planned on using both at the same time because training a robot in a 3 dimensional environment,
+                    will take a very long time to train meaning I will need a very long battery life for the robot. So since I had two lipo batteries, one 11.1V and one 12V. I 
+                    thought I could combine their power so power the robot, but both batteries were at different voltages meaning I can't just plug then 
+                    together in one outlet or they will destroy both batteries. 
+                </p>
+                <br>
+                <p>
+                    So to counter act this I came up with the idea of using two diodes which will be connected to one outlet, since diodes only allow current to
+                    flow to which ever diode has the highest voltage. Meaning that in the beginning the 12V battery will be the only battery that can 
+                    send current to the robot but when the battery is dead the voltage drops which allows the second diode connected to the 11.1V battery to power 
+                    the robot. However, I bought the wrong diodes so that idea was a bust. Then I thought of using a circuit called a 
+                    voltage divider where you can figure out the voltage of a battery based on the two resistors that are hooked up to it. So using 
+                    this circuit I used the two resistors to step down the voltage from 12V to 5V so the signal can be read by the Arduino and 
+                    then by reversing the calculations of the voltage divider circuit, the Aruino can figure out what voltage the battery is at. If the 
+                    battery is below 6V which is mandatory to run the servos and raspberry pi, then it uses a relay that instantly switches to the other battery.
+                    When the first battery has power again, the Arduino sees that the first batttery is now above 6V and uses a relay to switch to the first battery.
+
+                </p>
+                <br>
+                <p>
+                    More updates will come soon! If you want to keep up with the development of the robot, you can check my blog where I go 
+                    into detail about my designs and code.
+                </p>
+                <a href="https://colab.research.google.com/drive/1KwvqoKjjAEhINPGtYdHrfsJjY_fyPxLZ" class="btn2">Google Colab</a>
+                <a href="https://dellboys006.wixsite.com/derkblogs-year-12-se" class="btn2">1st Semester Blog</a>
+                <a href="https://dellboys006.wixsite.com/my-site-1" class="btn2">2nd Semester Blog</a>
+            </div>
+        </div>
+    </div>
+    <h1 class="gal-title">Project Gallery</h1>
+    <div class="row-gal">
+        <div class="column-gal">
+          <img src="images/pt-foot.png">
+          <img src="images/pt-heel.png">
+          <img src="images/pt-universal-mount.png">
+          <img src="images/pt-rl-sim.png">
+        </div>
+        <div class="column-gal">
+            <img src="images/pt-platform.png">
+            <img src="images/pt-rl-electrical1.jpg">
+            <iframe src="images/pt-battery-back-up.mp4" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="column-gal">
+            <img src="images/pt-rl-electrical2.jpg">
+            <img src="images/pt-rl-electrical3.jpg">
+          </div>
+          <div class="column-gal">
+            <img src="images/pt-rl-electrical4.jpg">
+            <img src="images/pt-rl-electrical-5.jpg">
+          </div>
+      </div>
+</div>
+<!--------------------------------------------------Footer----------------------------------------------->
+<div class="copyright">
+    <p>Copyright © Derick Luke. Made with HardWork and Dedication <i class="fa-solid fa-heart"></i></p>
+</div>
+
+<!---------------------------------------Javascript for Phone menu-------------------------------------->
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+<!-------------------------Open and Close Sidemenu on mobile----------------------->
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+</script>
+</body>
+</html>

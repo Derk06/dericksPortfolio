@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale-=1.0">
+        <title>Personal Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/e19de4e09e.js" crossorigin="anonymous"></script>
+    <head>
+    <body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Derick Luke</p>
+                <h1>First Person Shooter <span>Game</span></h1>
+            </div>
+        </div>
+    </div>
+<!-------------------------------------------------About Us Content-------------------------------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/GameDev3.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">Description</h1>
+                <p><strong>Status: Finished</strong></p>
+                <br>
+                <p>
+                    In 2021, I chose Game Development as one of my subjects and began working on an fps game. I didn't know anything 
+                    about game design or C# for that matter, so I took a quick course on C# and began making my game. Here is an extensive 
+                    timeline of the games development.
+                </p>
+                <br>
+                <p>
+                    <strong>Week 1: Establishing the Core Mechanics</strong><br><br>
+                    I began by setting up the basic framework for an FPS game. Using Unity's standard assets, I imported an FPS 
+                    player and equipped it with an AK-47 model. My first major task was to develop the gun mechanics, particularly 
+                    the raycast shooting system. I implemented raycasting to allow bullets fired from the AK-47 to detect and interact 
+                    with objects in the environment, determining whether they could take damage or were stationary, like terrain. I 
+                    also created a shootpoint for accurate bullet firing. Later in the week, I added animations for the gun's idle and 
+                    firing states, linked to the firing action triggered by the left mouse button. To enhance realism, I incorporated a 
+                    muzzle flash and AK-47 sound effects each time the gun fired. I then developed a reloading mechanism, ensuring that 
+                    when the magazine was empty, the game would deduct bullets from the total available and reload accordingly. This 
+                    system included conditions for when bullets ran out entirely, preventing the firing animation from playing.
+                </p>
+                <br>
+                <p>
+                    <strong>Week 2: Refining Mechanics and Environment Creation</strong><br><br>
+                    I focused on enhancing the realism of the gameplay. I wrote a new C# script for "WeaponSway," which added a 
+                    delay in the weapon's movement when the character turned, creating a more natural feel. I also began working on 
+                    the game's environment but faced challenges due to hardware limitations. After upgrading my system's RAM, I was 
+                    able to start designing one of the maps that I planned to make.
+                </p>
+                <br>
+                <p>
+                    <strong>Week 3: Environmental Detailing</strong><br><br>
+                    I added spawn points for both teams and began refining the game's scenery. This included introducing 
+                    realistic water physics and making detailed adjustments to the environment, such as placing buildings, 
+                    riverside rocks, and waterfalls. These small details significantly enhanced the realism of the game world, 
+                    making it more immersive.
+                </p>
+                <br>
+                <p>
+                    <strong>Week 4: Impact and Visual Feedback</strong><br><br>
+                    I continued to improve the weapon mechanics by adding visual effects for when bullets hit various surfaces. 
+                    I programmed a flare animation to play whenever a bullet struck an object, simulating the real-world impact of 
+                    bullets. Additionally, I implemented a system where bullet holes would appear on surfaces where bullets landed, 
+                    adding to the game's realism.
+                </p>
+                <br>
+                <p>
+                    <strong>Week 5: Scenery Expansion</strong><br><br>
+                    I expanded the game's scenery, focusing on natural elements like riverbeds and beaches. Drawing inspiration from 
+                    real-world locations, I made adjustments that improved the overall appearance of the environment. These changes 
+                    helped compensate for the game's modest graphics by leveraging strong scenic design.
+                </p>
+                <br>
+                <p>
+                    <strong>Week 6: Aligning Environment with Story</strong><br><br>
+                    With the game's story taking shape, I had to revise some of the environmental designs to match the new narrative. 
+                    This included building a fortress for the enemy team and tweaking other aspects of the scenery to better fit the 
+                    game's mechanics and storyline.
+                </p>
+                <br>
+                <p>
+                    <strong>Week 7: Continued Environmental Adjustments</strong><br><br>
+                    I added additional features to the environment, such as a second waterfall that fed into the riverbed, enhancing 
+                    the natural landscape. Tutorials on creating realistic scenery proved invaluable during this period, helping me 
+                    elevate the quality of the game's visuals despite limited resources.
+                </p>
+                <br>
+                <p>
+                    <strong>Week 8: Vehicle Mechanics and Story Integration</strong><br><br>
+                    The game's story rewrite introduced new gameplay mechanics, including the addition of a vehicle objective. 
+                    I sourced a 3D car model and wrote a "carController" script to handle its mechanics, including colliders, wheel 
+                    functions, lighting effects, particles for skid marks, and sound effects. This car became a central part of the 
+                    game’s objectives, requiring significant coding and problem-solving.
+                </p>
+                <br>
+                <p>
+                    <strong>Week 9: Terrain Optimization</strong><br><br>
+                    This week was focused on refining the terrain to ensure smooth gameplay. I worked on evening out the terrain to 
+                    prevent vehicles from getting stuck, which would otherwise cause unfair gameplay scenarios. Learning how to 
+                    effectively use Unity's terrain tools was crucial in overcoming the challenges I faced during this phase.
+                </p>
+                <br>
+                <p>
+                    <strong>Week 10: Testing and Optimization</strong><br><br>
+                    The week was dedicated to testing the game’s performance. Despite running at a low frame rate due to hardware 
+                    constraints, the game’s mechanics were functioning as intended. I realized the importance of optimization and 
+                    future-proofing the game to ensure it could run smoothly with multiple players, emphasizing the need for further 
+                    development and refinement.
+                </p>
+
+                <br>
+                <p>
+                    After 10 weeks of development, I ended the project abruptly as the semster was ver and moved on to bigger and 
+                    better project and learnt from the mistakes I made in this project. Most of my project files and code have been lost. 
+                    However, I was able to salvage a bit of my code that I used for my weapons. More details of my project can be found on 
+                    my GameDev Journal.
+                </p>
+
+                <a href="downloads/Weapon_code.zip" download class="btn2">Weapon Code</a>
+                <a href="downloads/GameDev-Journal.pdf" download class="btn2">GameDev Journal</a>
+            </div>
+        </div>
+    </div>
+    <h1 class="gal-title">Project Gallery</h1>
+    <div class="row-gal">
+        <div class="column-gal">
+            <img src="images/GameDev1.jpg">
+            <img src="images/GameDev5.jpg">
+            <img src="images/GameDev9.jpg">
+        </div>
+        <div class="column-gal">
+            <img src="images/GameDev2.jpg">
+            <img src="images/GameDev6.jpg">
+            <img src="images/GameDev10.jpg">
+          </div>
+          <div class="column-gal">
+            <img src="images/GameDev3.jpg">
+            <img src="images/GameDev7.jpg">
+            
+          </div>
+          <div class="column-gal">
+            <img src="images/GameDev4.jpg">
+            <img src="images/GameDev8.jpg">
+          </div>
+      </div>
+</div>
+<!--------------------------------------------------Footer----------------------------------------------->
+<div class="copyright">
+    <p>Copyright © Derick Luke. Made with HardWork and Dedication <i class="fa-solid fa-heart"></i></p>
+</div>
+
+<!---------------------------------------Javascript for Phone menu-------------------------------------->
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+<!-------------------------Open and Close Sidemenu on mobile----------------------->
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+</script>
+</body>
+</html>
