@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale-=1.0">
+        <title>Personal Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/e19de4e09e.js" crossorigin="anonymous"></script>
+    <head>
+    <body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Derick Luke</p>
+                <h1>Self Learning Walking <span>Robot</span></h1>
+            </div>
+        </div>
+    </div>
+<!-------------------------------------------------About Us Content-------------------------------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/finished-Bipedal.jpg">
+                <video src="images/pt-self-walking-1.mp4" controls autoplay muted loop></video>
+                <video src="images/pt-self-walking-2.mp4" controls autoplay muted loop></video>
+                <video src="images/pt-self-walking-3.mp4" controls autoplay muted loop></video>
+                <video src="images/pt-self-walking-4.mp4" controls autoplay muted loop></video>
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">Description</h1>
+                <p><strong>Status: Finished</strong></p>
+                <br>
+                <p>
+                    I began my project at the start of 2024, where I decided I wanted to make a reinforcement learning system for a school project. I decided 
+                    I wanted to make a robot that can walk by itself using reinforcement learning. However, I first needed to learn how 
+                    reinforcement learning works so for the next 4 months, I began researching on reinforcement learning. In the first month 
+                    I began looking for learning resources but most of the sources I couldn't understand because it required university level maths 
+                    which I didn't understand because I haven't learnt it yet in school. However I was able to find a book on reinforcement learning 
+                    where it explains RL concepts in detail and shows how to implement them in python. I spent another 3 months going through all 500 pages 
+                    of the book. Once I learned the RL concepts in the book I began my search for which algorithim I should use for my robot. I came to 
+                    the conclusion that I should use the Twin Delayed Deep Deterministic Policy Gradient (TD3) algorithim for my robot as one the algorithim 
+                    excels at using continuous actions where the actions you can take in an environment can go up to infinity. I then began experimenting with 
+                    the algorithim getting comfortable with it and understanding it on a deep level, like using the algorithim to beat the OpenAI Bipedal-Walker-V3 
+                    environment and it was successful. In under 800 episodes, the agent was able to learn how to run. My experiments can be seen on my Colab Notebook below.
+
+                </p>
+                <br>
+                <p>
+                    After learning how to use the TD3 algorithim, I began creating a 3D model for my robot. My first design had a few flaws to it, so 
+                    I made a completely new design and printed it out. I then began working on the electrical side of the project, where I 
+                    had two lipo batteries and I planned on using both at the same time because training a robot in a 3 dimensional environment,
+                    will take a very long time to train meaning I will need a very long battery life for the robot. So since I had two lipo batteries, one 11.1V and one 12V. I 
+                    thought I could combine their power so power the robot, but both batteries were at different voltages meaning I can't just plug then 
+                    together in one outlet or they will destroy both batteries. 
+                </p>
+                <br>
+                <p>
+                    So to counter act this I came up with the idea of using two diodes which will be connected to one outlet, since diodes only allow current to
+                    flow to which ever diode has the highest voltage. Meaning that in the beginning the 12V battery will be the only battery that can 
+                    send current to the robot but when the battery is dead the voltage drops which allows the second diode connected to the 11.1V battery to power 
+                    the robot. However, I bought the wrong diodes so that idea was a bust. Then I thought of using a circuit called a 
+                    voltage divider where you can figure out the voltage of a battery based on the two resistors that are hooked up to it. So using 
+                    this circuit I used the two resistors to step down the voltage from 12V to 5V so the signal can be read by the Arduino and 
+                    then by reversing the calculations of the voltage divider circuit, the Aruino can figure out what voltage the battery is at. If the 
+                    battery is below 6V which is mandatory to run the servos and raspberry pi, then it uses a relay that instantly switches to the other battery.
+                    When the first battery has power again, the Arduino sees that the first batttery is now above 6V and uses a relay to switch to the first battery. 
+                </p>
+                <br>
+                <p>
+                    After my battery backup system was a success, I connected it to two buck converters to create a multi-stage power delivery system. First, the 
+                    power was fed into the primary buck converter, which stepped the voltage down from 12V to 6.5V. This adjustment was necessary because the servos 
+                    in my robot had an operating voltage range of 6V to 7V, and 6.5V was optimal for their performance. From there, I connected the output of the first 
+                    buck converter to a second one, which stepped the voltage down further, from 6.5V to 5V. This final step was critical to power the Raspberry Pi, as 
+                    it requires a stable 5V input to function properly.
+                </p>
+                <br>
+                <p>
+                    However, the process was not without its challenges. One of the major difficulties I faced was dealing with the wiring. Initially, I used thin wires for the 
+                    connections, not realizing that their higher resistance would limit the current flow. This stopped my Raspberry Pi from booting up since the Raspberry Pi needed atleast 2A,
+                    and the thin wires could only really handle around 1A. This resulted in significant voltage drops and overheating, even causing 
+                    the insulation of the wires to melt. When I replaced the thin wires with thicker ones capable of handling higher currents, the system stabilized, and the components began 
+                    functioning correctly. This experience taught me the importance of wire gauge selection in high-current applications.
+                </p>
+                <br>
+                <p>
+                    After booting up the Raspberry Pi, I started coding the TD3 algorithim, I repurposed the algorithim I used for the 
+                    Open AI Bipedal Walker environemnt, and converted it so it can be used by my robot. After repurposing the algorithim, I 
+                    began setting up my environment so the algorithim can learn. I began by setting up the pressure plates for the feet of my robot, these pressure 
+                    plates help the robot learn where its feet are positioned and lets it know its on the ground, the pressure plates are just two metal plates and when they touch 
+                    they make a closed circuit. I hooked the pressure plate to an Arduino and coded it so it would act as a button which would return either true or false. On the same Arduino, 
+                    I connected 10 servos on to it, these servos act as joints for the legs of my robot, this would allow it to move. I also set up a USB camera and connected it to the Raspberry PI, 
+                    this camera used computer vision to find out where a human face is and then calculate how far it is using focal length math, this was used in the learning of the TD3 algorithim as 
+                    I was making my robot learn how to walk towards a human.
+                </p>
+                <br>
+                <p>
+                    I then setup a second Arduino which is connected to an MPU6050, this would give my robot it's orientation data and help the robot learn how 
+                    to balance itself. I then connected both Arduino's to the Raspberry Pi and used serial communication so that the data can be sent from the Arduino's to 
+                    the Raspberry Pi. after I set up serial communication, I grabbed the data from the Arduino's and made a function where it grabs the data and put them 
+                    into a tensor which my TD3 algorithim can use and learn from. The TD3 algorithim would then output an action list containing 10 values. I would then use 
+                    serial communication again by sending the list of actions to the first Arduino which I connected my 10 servos too. After I sent the action list to the Arduino, I would 
+                    do some data processing and send each of the 10 actions in the list to the servos. After I finished the build of my robot, I built a training rig out of pvc pipes
+                    for the robot to train in. This helped the robot learn how to balance and protect it in training. I also used an ATX power supply that I found at the dump 
+                    to power on my robot, since I didn't really need to use battery power when in training. So I repurposed an old ATX power supply from a PC tower to power on my robot during
+                    training. After powering it on and doing some testing, my robot showcased that it was learning and could potentially learn how to walk. However, this robot is only a prototype meaning 
+                    the design isn't perfect and a lot of imrpovements can be made, in the future I will be making some adjustments to the design like adding a torso with arms so that it can learn to pick itself up. 
+                    My design was also rushed and didn't have a lot of budget to work with, since it was a school project.
+                    However, this whole project was a success since I was only testing to see if the system would learn by itself rather than it fully walking.
+                </p>
+                <br>
+                <p>
+                    I was also able to showcase this project at PYCON AU which is the largest annual convention for the discussion and promotion of the Python programming language.
+                    I showcased this project along with 2 other people who had their own seperate projects and all of us combined them into one big project, our talk can be viewed on the PYCON AU youtube channel. 
+                    <br><br>[Youtube Link][Timestamp]: [https://www.youtube.com/watch?v=xVjlVYFrJj4] [1:14:04]
+                </p>
+                <br>
+                <p>
+                    My code and designs can download in the button below. I also added my year 12 blogs documenting my journey in creating this project.
+                </p>
+                <a href="downloads/pt-Bipedal_Robot_FULL.zip" download class="btn2">Download</a>
+                <a href="https://colab.research.google.com/drive/1KwvqoKjjAEhINPGtYdHrfsJjY_fyPxLZ" class="btn2">Google Colab</a>
+                <a href="https://dellboys006.wixsite.com/derkblogs-year-12-se" class="btn2">1st Semester Blog</a>
+                <a href="https://dellboys006.wixsite.com/my-site-1" class="btn2">2nd Semester Blog</a>
+            </div>
+        </div>
+    </div>
+    <h1 class="gal-title">Project Gallery</h1>
+    <div class="row-gal">
+        <div class="column-gal">
+          <img src="images/pt-foot.png">
+          <img src="images/pt-heel.png">
+          <img src="images/pt-universal-mount.png">
+          <img src="images/pt-rl-sim.png">
+          <img src="images/pt-making-electronic.jpg">
+          <img src="images/pt-making-electronic-4.jpg">
+          <video src="images/pt-self-walking-1.mp4" controls autoplay muted loop></video>
+          <video src="images/pt-self-walking-2.mp4" controls autoplay muted loop></video>
+        </div>
+        <div class="column-gal">
+            <img src="images/pt-platform.png">
+            <img src="images/pt-rl-electrical1.jpg">
+            <video src="images/pt-battery-back-up.mp4" controls autoplay muted loop></video>
+            <img src="images/pt-platform.jpg">
+            <img src="images/pt-making-electronic-1.jpg">
+            <img src="images/finished-robot-1.jpg">
+          </div>
+          <div class="column-gal">
+            <img src="images/pt-rl-electrical2.jpg">
+            <img src="images/pt-rl-electrical3.jpg">
+            <img src="images/3D_Robot_FUll.png">
+            <img src="images/pt-half-built.jpg">
+            <img src="images/pt-making-electronic-2.jpg">
+            <video src="images/pt-self-walking-4.mp4" controls autoplay muted loop></video>
+          </div>
+          <div class="column-gal">
+            <img src="images/pt-rl-electrical4.jpg">
+            <img src="images/pt-rl-electrical-5.jpg">
+            <img src="images/pt-legs.jpg">
+            <img src="images/pt-finished-back-up.jpg">
+            <img src="images/pt-making-electronic-3.jpg">
+            <video src="images/pt-self-walking-3.mp4" controls autoplay muted loop></video>
+          </div>
+      </div>
+</div>
+<!--------------------------------------------------Footer----------------------------------------------->
+<div class="copyright">
+    <p>Copyright © Derick Luke. Made with HardWork and Dedication <i class="fa-solid fa-heart"></i></p>
+</div>
+
+<!---------------------------------------Javascript for Phone menu-------------------------------------->
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+<!-------------------------Open and Close Sidemenu on mobile----------------------->
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemeu.style.right = "0";
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px";
+    }
+</script>
+
+
+</body>
+</html>
